@@ -1,18 +1,18 @@
 %define name	pop-before-smtp
 %define version 1.41
-%define release 1
+%define release %mkrel 1
 
-Summary:	Watch log for pop/imap auth, notify Postfix to allow relay
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source:		http://prdownloads.sourceforge.net/popbsmtp/pop-before-smtp-%{version}.tar.bz2
-URL:		http://popbsmtp.sourceforge.net/
+Summary:	Watch log for pop/imap auth, notify Postfix to allow relay
 License:	BSD like
 Group:		System/Servers
+URL:		http://popbsmtp.sourceforge.net/
+Source:		http://prdownloads.sourceforge.net/popbsmtp/pop-before-smtp-%{version}.tar.bz2
+Requires(pre):		rpm-helper
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Prereq:		rpm-helper
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Spam prevention requires preventing open relaying through email
@@ -35,7 +35,7 @@ rm -rf %{buildroot}
 pod2man pop-before-smtp > pop-before-smtp.8 2>/dev/null
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 mkdir -p %{buildroot}{%{_initrddir},%{_sysconfdir},%{_sbindir},%{_mandir}/man8}
 #cp pop-before-smtp.init	%{buildroot}%{_initrddir}/pop-before-smtp
 cp contrib/init-redhat-alex	%{buildroot}%{_initrddir}/pop-before-smtp
@@ -56,7 +56,6 @@ rm -rf %{buildroot}
 %defattr(-, root, root)
 %doc README TODO COPYING contrib
 %doc %{_mandir}/man8/*
-%attr(0755, root, root) %{_sbindir}/pop-before-smtp
-%attr(0755, root, root) %config(noreplace) %{_initrddir}/pop-before-smtp
-%attr(0755, root, root) %config(noreplace) %{_sysconfdir}/pop-before-smtp-conf.pl
-
+%{_sbindir}/pop-before-smtp
+%config(noreplace) %{_initrddir}/pop-before-smtp
+%config(noreplace) %{_sysconfdir}/pop-before-smtp-conf.pl
