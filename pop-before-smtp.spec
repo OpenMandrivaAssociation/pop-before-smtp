@@ -1,6 +1,6 @@
 %define name	pop-before-smtp
-%define version 1.36
-%define release 2mdk
+%define version 1.41
+%define release 1
 
 Summary:	Watch log for pop/imap auth, notify Postfix to allow relay
 Name:		%{name}
