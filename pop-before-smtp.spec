@@ -12,7 +12,6 @@ URL:		http://popbsmtp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/popbsmtp/pop-before-smtp-%{version}.tar.bz2
 Requires(pre):		rpm-helper
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Spam prevention requires preventing open relaying through email
