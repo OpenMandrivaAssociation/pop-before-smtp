@@ -1,6 +1,6 @@
 %define name	pop-before-smtp
 %define version 1.41
-%define release %mkrel 3
+%define release %mkrel 4
 
 Name:		%{name}
 Version:	%{version}
