@@ -1,6 +1,6 @@
 %define name	pop-before-smtp
-%define version 1.41
-%define release %mkrel 4
+%define version 1.42
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -29,7 +29,7 @@ people who have recently downloaded their email.
 %prep
 %setup -q
 #%patch1 -p 1 -b .init-with-reload-and-maillog-location
-perl -pi -e 's|/var/log/maillog|/var/log/mail/info|' README pop-before-smtp pop-before-smtp-conf.pl pop-before-smtp.init 
+perl -pi -e 's|/var/log/maillog|/var/log/mail/info|' README pop-before-smtp pop-before-smtp-conf.pl pop-before-smtp.init
 %build
 rm -rf %{buildroot}
 pod2man pop-before-smtp > pop-before-smtp.8 2>/dev/null
