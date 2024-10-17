@@ -8,7 +8,7 @@ Release:	%{release}
 Summary:	Watch log for pop/imap auth, notify Postfix to allow relay
 License:	BSD like
 Group:		System/Servers
-URL:		http://popbsmtp.sourceforge.net/
+URL:		https://popbsmtp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/popbsmtp/pop-before-smtp-%{version}.tar.bz2
 Requires(pre):		rpm-helper
 BuildArch:	noarch
